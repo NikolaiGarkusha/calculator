@@ -24,14 +24,13 @@ namespace Calculator
         {
             InitializeComponent();
         }
-
         Parser p = new Parser();
         
         private void resultOfExpression()
         {
             string str = expressionTextBox.Text;
             expressionTextBox.Clear();
-                expressionTextBox.AppendText(p.Evaluate(str).ToString());          
+            expressionTextBox.AppendText(p.Evaluate(str).ToString());          
         }
 
         private void zeroButton_Click(object sender, RoutedEventArgs e)

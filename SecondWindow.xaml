@@ -5,55 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
-        Title="Calculator by NikolaiHarkusha" Height="350" Width="520" ResizeMode="NoResize">
+        Title="Calculator by NikolaiHarkusha" Height="204.5" Width="520" ResizeMode="NoResize">
     <Grid x:Name="LayoutRoot" Background="Black" >
         <Menu Background="White">
             <MenuItem Header="File">
-                <MenuItem Header="New" ></MenuItem>
-                <MenuItem Header="Open"></MenuItem>
-                <MenuItem Header="Save"></MenuItem>
-                <MenuItem Header="SaveAs..."></MenuItem>
-                <Separator></Separator>
-                <MenuItem Header="Exit"></MenuItem>
+                <MenuItem Header="Exit" Click="MenuItem_Click"></MenuItem>
             </MenuItem>
         </Menu>
-        <TextBox x:Name="resultTextBox" Height="32" TextWrapping="Wrap" Text="Ans" Margin="10,20,10,269" FlowDirection="RightToLeft" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Padding="0,5,0,10" IsEnabled="False" FontWeight="Bold"/>
-        <TextBox x:Name="expressionTextBox" Height="50" Margin="10,52,10,0" TextWrapping="Wrap" FontFamily="Arial" FontSize="32" FlowDirection="LeftToRight" RenderTransformOrigin="0.5,0.5" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalScrollBarVisibility="Auto" Padding="0,5,0,0" VerticalAlignment="Top">
-            <TextBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleY="1" ScaleX="1"/>
-                    <SkewTransform AngleY="0" AngleX="0"/>
-                    <RotateTransform Angle="0"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBox.RenderTransform>
-        </TextBox>
-        <Button x:Name="lBracketButton" Content="(" HorizontalAlignment="Left" Height="31" Margin="109,107,0,0" VerticalAlignment="Top" Width="85" FontFamily="Arial" FontSize="13.333" Click="lBracketButton_Click" Background="#FF898888" FontWeight="Bold"/>
-        <Button x:Name="sqrButton" Content="&#8730;" HorizontalAlignment="Left" Height="31" Margin="10,143,0,0" VerticalAlignment="Top" Width="85" FontFamily="Arial" FontSize="13.333" Click="sqrButton_Click" Background="#FF898888" FontWeight="Bold"/>
-        <Button x:Name="rBracketButton" Content=")" HorizontalAlignment="Left" Height="31" Margin="210,107,0,0" VerticalAlignment="Top" Width="85" FontFamily="Arial" FontSize="13.333" Click="rBracketButton_Click" Background="#FF898888" FontWeight="Bold"/>
-        <Button x:Name="cleanButton" Content="C" HorizontalAlignment="Left" Height="31" Margin="410,107,0,0" VerticalAlignment="Top" Width="85" FontFamily="Arial" FontSize="13.333" Click="cleanButton_Click" Background="#FF898888" FontWeight="Bold"/>
-        <Button x:Name="percentButton" Content="%" HorizontalAlignment="Left" Height="31" Margin="309,107,0,0" VerticalAlignment="Top" Width="85" FontFamily="Arial" FontSize="13.333" Click="percentButton_Click" Background="#FF898888" FontWeight="Bold"/>
-
-        <Button x:Name="oneButton" Content="1" HorizontalAlignment="Left" Height="31" Margin="109,215,0,0" VerticalAlignment="Top" Width="85" FontFamily="Arial" FontSize="13.333" Click="oneButton_Click" Background="#FFF3F3F3" FontWeight="Bold"/>
-        <Button x:Name="twoButton" Content="2" HorizontalAlignment="Left" Height="31" Margin="210,215,0,0" VerticalAlignment="Top" Width="85" FontFamily="Arial" FontSize="13.333" Click="twoButton_Click" Background="#FFF3F3F3" FontWeight="Bold"/>
-        <Button x:Name="minusButton" Content="-" HorizontalAlignment="Left" Height="31" Margin="410,215,0,0" VerticalAlignment="Top" Width="85" FontFamily="Arial" FontSize="13.333" Click="minusButton_Click" Background="#FF898888" FontWeight="Bold"/>
-        <Button x:Name="threeButton" Content="3" HorizontalAlignment="Left" Height="31" Margin="309,215,0,0" VerticalAlignment="Top" Width="85" FontFamily="Arial" FontSize="13.333" Click="threeButton_Click" Background="#FFF3F3F3"/>
-
-        <Button x:Name="fourButton" Content="4" HorizontalAlignment="Left" Height="31" Margin="109,179,0,0" VerticalAlignment="Top" Width="85" FontFamily="Arial" FontSize="13.333" Click="fourButton_Click" Background="#FFF3F3F3" FontWeight="Bold"/>
-        <Button x:Name="fiveButton" Content="5" HorizontalAlignment="Left" Height="31" Margin="210,179,0,0" VerticalAlignment="Top" Width="85" FontFamily="Arial" FontSize="13.333" Click="fiveButton_Click" Background="#FFF3F3F3" FontWeight="Bold"/>
-        <Button x:Name="multiplyButton" Content="&#215;" HorizontalAlignment="Left" Height="31" Margin="410,179,0,0" VerticalAlignment="Top" Width="85" FontFamily="Arial" FontSize="13.333" Click="multiplyButton_Click" Background="#FF898888" FontWeight="Bold"/>
-        <Button x:Name="sixButton" Content="6" HorizontalAlignment="Left" Height="31" Margin="309,179,0,0" VerticalAlignment="Top" Width="85" FontFamily="Arial" FontSize="13.333" Click="sixButton_Click" Background="#FFF3F3F3" FontWeight="Bold"/>
-
-        <Button x:Name="sevenButton" Content="7" HorizontalAlignment="Left" Height="31" Margin="109,143,0,0" VerticalAlignment="Top" Width="85" FontFamily="Arial" FontSize="13.333" Click="sevenButton_Click" Background="#FFF3F3F3" FontWeight="Bold"/>
-        <Button x:Name="factorButton" Content="x!" HorizontalAlignment="Left" Height="31" Margin="10,107,0,0" VerticalAlignment="Top" Width="85" FontFamily="Arial" FontSize="13.333" Click="factorButton_Click" Background="#FF898888" FontWeight="Bold"/>
-        <Button x:Name="eightButton" Content="8" HorizontalAlignment="Left" Height="31" Margin="210,143,0,0" VerticalAlignment="Top" Width="85" FontFamily="Arial" FontSize="13.333" Click="eightButton_Click" Background="#FFF3F3F3" FontWeight="Bold"/>
-        <Button x:Name="divideButton" Content="&#247;" HorizontalAlignment="Left" Height="31" Margin="410,143,0,0" VerticalAlignment="Top" Width="85" FontFamily="Arial" FontSize="13.333" Click="divideButton_Click" Background="#FF898888" FontWeight="Bold"/>
-        <Button x:Name="nineButton" Content="9" HorizontalAlignment="Left" Height="31" Margin="309,143,0,0" VerticalAlignment="Top" Width="85" FontFamily="Arial" FontSize="13.333" Click="nineButton_Click" Background="#FFF3F3F3" FontWeight="Bold"/>
-
-        <Button x:Name="zeroButton" Content="0" HorizontalAlignment="Left" Height="31" Margin="109,251,0,0" VerticalAlignment="Top" Width="85" FontFamily="Arial" FontSize="13.333" Click="zeroButton_Click" Background="#FFF3F3F3" FontWeight="Bold"/>
-        <Button x:Name="powButton" Content="x^y" HorizontalAlignment="Left" Height="31" Margin="10,179,0,0" VerticalAlignment="Top" Width="85" FontFamily="Arial" FontSize="13.333" Click="powButton_Click" Background="#FF898888" FontWeight="Bold"/>
-        <Button x:Name="pointButton" Content="," HorizontalAlignment="Left" Height="31" Margin="210,251,0,0" VerticalAlignment="Top" Width="85" FontFamily="Arial" FontSize="13.333" Click="pointButton_Click" Background="#FFF3F3F3" FontWeight="Bold"/>
-        <Button x:Name="plusButton" Content="+" HorizontalAlignment="Left" Height="31" Margin="410,251,0,0" VerticalAlignment="Top" Width="85" FontFamily="Arial" FontSize="13.333" Click="plusButton_Click" Background="#FF898888" FontWeight="Bold"/>
-        <Button x:Name="equalButton" Content="=" HorizontalAlignment="Left" Height="31" Margin="309,251,0,0" VerticalAlignment="Top" Width="85" FontFamily="Arial" FontSize="18.667" Click="equalButton_Click" Background="#FF357AE8" FontWeight="Bold" Foreground="White"/>
+        <TextBox x:Name="intNumberOne" Height="30" TextWrapping="Wrap" Margin="35,40,433,105"/>
+        <TextBox x:Name="numeratorNumberOne" Height="30" TextWrapping="Wrap" Width="51" Margin="86,58,377,87"/>
+        <TextBox x:Name="denominatorNumberOne" Height="30" TextWrapping="Wrap" Width="51" Margin="86,23,377,122"/>
+        <TextBox x:Name="intNumberTwo" Height="30" TextWrapping="Wrap" Width="51" Margin="222,40,241,105"/>
+        <TextBox x:Name="numeratorNumberTwo" Height="30" TextWrapping="Wrap" Width="51" Margin="278,58,185,87"/>
+        <TextBox x:Name="denominatorNumberTwo" Height="30" TextWrapping="Wrap" Width="51" Margin="278,23,185,122"/>
+        <ComboBox x:Name="operand" Margin="153,42,311,0" VerticalAlignment="Top" SelectedIndex="0">
+            <ComboBoxItem Content="+"/>
+            <ComboBoxItem Content="-"/>
+            <ComboBoxItem Content="*"/>
+            <ComboBoxItem Content="/"/>
+        </ComboBox>
+        <Button x:Name="equalButton" Content="=" HorizontalAlignment="Left" Height="31" Margin="320,126,0,0" VerticalAlignment="Top" Width="85" FontFamily="Arial" FontSize="18.667" Click="equalButton_Click" Background="#FF357AE8" FontWeight="Bold" Foreground="White"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="438" Margin="35,95,0,0"/>
+        <Label x:Name="label" Content="=" HorizontalAlignment="Left" Margin="343,42,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="intResult" HorizontalAlignment="Left" Height="30" Margin="366,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="51"/>
+        <TextBox x:Name="denominatorResult" HorizontalAlignment="Left" Height="30" Margin="422,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="51"/>
+        <TextBox x:Name="numeratorResult" HorizontalAlignment="Left" Height="30" Margin="422,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="51"/>
+        <Button x:Name="cleanButton" Content="C" HorizontalAlignment="Left" Height="31" Margin="125,126,0,0" VerticalAlignment="Top" Width="85" FontFamily="Arial" FontSize="13.333" Click="cleanButton_Click" Background="#FF898888" FontWeight="Bold"/>
     </Grid>
 </Window>

@@ -106,22 +106,17 @@ namespace Calculator
 
         void EvalExp4(out double result)
         {
-            double partialResult, ex;
-            int t;
+            string op;
+            double partialResult = 0.0;
+
             EvalExp5(out result);
-            if (token == "^")
+            while ((op = token) == "^")
             {
                 GetToken();
-                EvalExp4(out partialResult);
-                ex = result;
-                if (partialResult == 0.0)
+                EvalExp5(out partialResult);
+                if (op == "^")
                 {
-                    result = 1.0;
-                    return;
-                }
-                for (t = (int)partialResult - 1; t > 0; t--)
-                {
-                    result = result + (double)ex;
+                    result = Math.Pow(result, partialResult);
                 }
             }
         }
